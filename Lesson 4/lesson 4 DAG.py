@@ -57,7 +57,7 @@ def lesson_4_DAG():
 
     # Загрузка данных в postgres с помощью hook
     @task()
-    def hook(input):
+    def hook(input):  # input = (table_name, df)
         # data_warehouse
         hook = BaseHook.get_hook(conn_id='data_warehouse')
         postgreSQLConnection = hook.get_sqlalchemy_engine()
